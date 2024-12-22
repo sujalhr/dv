@@ -1,0 +1,102 @@
+ Amazon Prime Data Analysis Guide: Tableau & Power BI
+
+ Tableau Implementation
+
+ 1. Donut Chart (Movies vs TV Shows Distribution)
+- Load Data:
+  - Open Tableau and connect to Amazon Prime dataset
+
+- Create Base Chart:
+  - Drag Type field to Rows shelf
+  - Drag Type to Columns shelf
+  - Drag Number of Records to Angle shelf
+  - Convert to Pie Chart from Marks dropdown
+
+- Create Donut Effect:
+  - Duplicate Number of Records on Rows shelf
+  - Change one to Circle in Marks card
+  - Reduce circle size for donut hole
+
+- Add Labels:
+  - Drag Type to Label shelf
+  - Add Number of Records for percentages
+  - Set Quick Table Calculation to Percent of Total
+
+- Format:
+  - Customize colors with Type on Color shelf
+  - Adjust labels to show percentage and type
+
+ 2. Area Chart (Releases by Year and Type)
+- Base Setup:
+  - Drag Release Year to Columns
+  - Drag Number of Records to Rows
+  - Select Area Chart from Marks
+
+- Add Type Breakdown:
+  - Drag Type field to Color shelf
+
+- Format:
+  - Add title
+  - Adjust colors for Movies vs TV Shows
+  - Modify axes and gridlines
+
+ 3. Horizontal Bar Chart (Top 10 Genres)
+- Create Base Chart:
+  - Drag Genre to Rows
+  - Drag Number of Records to Columns
+
+- Configure Display:
+  - Sort Number of Records descending
+  - Filter for Top 10 by Sum(Number of Records)
+
+- Format:
+  - Adjust bar appearance
+  - Add title
+  - Add Genre to Color shelf
+
+ 4. Map (Shows by Country)
+- Create Base Map:
+  - Drag Country to Rows
+  - Set geographic role if needed
+
+- Add Metrics:
+  - Drag Number of Records to Size shelf
+  - Drag Number of Records to Color shelf
+
+- Format:
+  - Adjust map layers
+  - Add title
+  - Configure tooltips
+
+ 5. Text Sheet (Movie Descriptions)
+- Basic Setup:
+  - Drag Title to Rows
+  - Drag Description to Text in Marks
+
+- Add Filtering:
+  - Add Title to Filters
+  - Create Parameter for interactive selection
+
+- Format:
+  - Adjust font properties
+  - Add title
+  - Configure text layout
+
+ 6. Interactive Dashboard
+- Initial Setup:
+  - Create new dashboard
+  - Add all worksheets
+
+- Add Interactivity:
+  - Configure dashboard actions
+  - Set up filters/highlights
+
+- Add Control Elements:
+  - Add relevant filters
+  - Configure filter application scope
+
+- Format Dashboard:
+  - Adjust layout
+  - Add title
+  - Configure borders and spacing
+

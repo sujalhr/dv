@@ -1,0 +1,94 @@
+ HR Data Analysis Guide: Tableau & Power BI
+ Tableau Implementation
+
+ 1. Creating KPIs
+ Employee Count
+1. Drag Employee ID to Text on Marks Card
+2. Right-click field in Data Pane
+3. Choose Measure > Count
+
+ Attrition Count
+1. Filter Attrition field for "Yes"
+2. Drag Employee ID to Text on Marks Card
+3. Change Measure to Count
+
+ Attrition Rate
+1. Create Calculated Field in Data Pane
+2. Name it "Attrition Rate"
+3. Enter formula: `SUM(IF [Attrition] = "Yes" THEN 1 ELSE 0 END) / COUNT([Employee ID])`
+4. Drag to Text
+
+ Active Employees
+1. Filter Attrition field for "No"
+2. Drag Employee ID to Text
+3. Set to Count
+
+ Average Age
+1. Drag Age field to Text
+2. Right-click Age field
+3. Select Measure > Average
+
+ 2. Lollipop Chart (Attrition Rate by Gender)
+1. Drag Gender to Columns
+2. Drag Attrition to Rows (filter for "Yes")
+3. Drag Employee ID to Rows (set to Count)
+4. Create Dual Axis:
+   - Right-click second Employee ID
+   - Select Dual Axis
+5. Synchronize axes
+6. Set Mark Types:
+   - Second axis: Circle
+   - First axis: Line
+7. Format:
+   - Adjust circle size
+   - Color by Gender
+
+ 3. Pie Chart (Attrition by Department)
+1. Drag Department to Color
+2. Change Mark Type to Pie
+3. Filter Attrition for "Yes"
+4. Drag Attrition to:
+   - Angle (for slice size)
+   - Label (set to Percent of Total)
+5. Add total annotation
+6. Set to Entire View
+7. Customize labels
+
+ 4. Bar Chart (Employees by Age Group)
+1. Create Age Group:
+   - Right-click Age
+   - Create > Bins
+   - Set bin size (e.g., 5 years)
+2. Drag Age Group to Columns
+3. Drag Employee ID to Rows (set to Count)
+4. Add labels as needed
+
+ 5. Highlight Table (Job Satisfaction Rating)
+1. Drag Job Role to Rows
+2. Drag Job Satisfaction to Columns
+3. Drag Employee ID to:
+   - Text (set to Count)
+   - Color
+4. Change Mark Type to Square
+5. Format color scale
+
+ 6. Horizontal Bar Chart (Attrition by Education)
+1. Drag Education Field to Rows
+2. Drag Employee ID to Columns
+3. Filter Attrition for "Yes"
+4. Set Employee ID to Count
+5. Color by Education Field
+
+ 7. Multiple Donut Charts (Attrition by Gender/Age)
+1. Create Age Groups
+2. Drag Gender to Columns
+3. Filter Attrition for "Yes"
+4. Drag Age Group to Rows
+5. Create donut effect:
+   - Duplicate pie chart
+   - Use Dual Axis
+   - Reduce inner circle size
+6. Set up measurements:
+   - Drag Attrition to Angle
+   - Drag Attrition to Label (show as Percent)
+7. Format and synchronize

@@ -1,0 +1,90 @@
+ Power BI Implementation
+
+ 1. Creating KPIs
+ Employee Count
+1. Go to Report View
+2. Use Card Visualization
+3. Drag Employee ID field
+
+ Attrition Count
+1. Use Card Visualization
+2. Filter Attrition for "Yes"
+3. Drag Employee ID
+
+ Attrition Rate
+1. Create New Measure
+2. Enter DAX formula:
+   ```
+   Attrition Rate = DIVIDE(
+       CALCULATE(COUNT(Employee[EmployeeID]), 
+       Employee[Attrition] = "Yes"), 
+       COUNT(Employee[EmployeeID]))
+   ```
+3. Add to Card Visualization
+
+ Active Employees
+1. Use Card Visualization
+2. Filter Attrition for "No"
+3. Drag Employee ID
+
+ Average Age
+1. Use Card Visualization
+2. Drag Age field
+3. Set to Average
+
+ 2. Lollipop Chart Approximation
+1. Create Bar Chart:
+   - Gender on Axis
+   - Filtered Attrition in Values
+2. Create Line and Clustered Column Chart:
+   - Add Attrition Rate to Line Values
+   - Format markers for lollipop effect
+
+ 3. Pie Chart (Attrition by Department)
+1. Add Department to Legend
+2. Add filtered Attrition to Values
+3. Select Pie Chart visualization
+4. Format:
+   - Show percentages
+   - Show total count
+   - Set to Full View
+
+ 4. Bar Chart (Age Groups)
+1. Create Age Groups using DAX:
+   ```
+   Age Group = SWITCH(TRUE(),
+       Employee[Age] < 25, "Under 25",
+       Employee[Age] < 35, "25-34",
+       Employee[Age] < 45, "35-44",
+       Employee[Age] < 55, "45-54",
+       "55+")
+   ```
+2. Create Bar Chart:
+   - Age Group on Axis
+   - Employee Count in Values
+
+ 5. Highlight Table (Job Satisfaction)
+1. Create Matrix:
+   - Job Role in Columns
+   - Job Satisfaction in Rows
+   - Employee Count in Values
+2. Apply conditional formatting
+3. Set color scale
+
+ 6. Horizontal Bar Chart (Attrition by Education)
+1. Add Education Field to Axis
+2. Add filtered Employee ID to Values
+3. Select Horizontal Bar Chart
+4. Format as needed
+
+ 7. Multiple Donut Charts
+1. Create Gender Donut:
+   - Gender in Legend
+   - Filtered Attrition in Values
+2. Create Age Group Donut:
+   - Age Group in Legend
+   - Filtered Attrition in Values
+3. Arrange and format:
+   - Place charts side by side
+   - Add slicers for filtering
+   - Show percentages and counts
